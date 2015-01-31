@@ -1,17 +1,16 @@
-TARGET = main
-CC = gcc
-OBJ = main.o
-CFLAGS = -c -Wall -O
- 
-all: $(TARGET)
- 
-$(TARGET): $(OBJ)
-	$(CC) -o $(TARGET) $(OBJ)
- 
-%.o: %.cpp
-	$(CC) $(CFLAGS) $<
- 
+# Makefile
+# Ferdinand Saufler <mail@saufler.de
+# 04.11.2014
 
-clean:
-	rm -f $(TARGET)
-	rm -f $(OBJ)
+# vars
+TARGET   = main
+CC       =gcc
+_OBJ     =main.o
+OBJ      =$(patsubst %,$(O_DIR)/%,$(_OBJ))
+OBJ_BIND =
+LIBPATH  =../lib
+vpath %.c $(LIBPATH)
+CFLAGS   =-c -Wall -O -g -I$(LIBPATH)
+O_DIR    =bin
+
+include $(LIBPATH)/Makefile
