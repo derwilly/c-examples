@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 01.02.2015
- *
- * if else conditions
- */
+/* if else conditions */
 
 #include <stdio.h>
 #include <string.h>

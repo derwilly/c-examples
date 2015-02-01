@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * pointer to an int array
- */
+/* pointer to an int array */
 
 #include <stdio.h>
 

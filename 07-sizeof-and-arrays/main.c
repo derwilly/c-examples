@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * sizeof()
- */
+/* sizeof() */
 
 #include <stdio.h>
 

@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * Hallo World
- */
+/* Hallo World */
 
 #include <stdio.h>
 

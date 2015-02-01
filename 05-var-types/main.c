@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * vars
- */
+/* vars */
 
 #include <stdio.h>
 

@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 10.11.2014
- *
- * functions 1
- */
+/* functions 1 */
 
 #include <stdio.h>
 #include <string.h>

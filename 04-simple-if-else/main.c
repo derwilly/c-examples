@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 28.01.2015
- *
- * simple if else
- */
+/* simple if else */
 
 #include <stdio.h>
 

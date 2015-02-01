@@ -1,6 +1,4 @@
-/* Ferdinand Saufler
- * 21.11.2014
- */
+/* string starts_with */
 
 #include <stdio.h>
 #include <str.h>
@@ -14,5 +12,6 @@ int main(int argc, char *argv[])
     {
         printf("the sentence \"%s\" starts with \"%s\".\n",sentence,pattern);
     }
+
     return 0;
 }

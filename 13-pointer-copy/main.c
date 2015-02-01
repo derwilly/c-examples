@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * more Pointer stuff
- */
+/* more Pointer stuff */
 
 #include <stdio.h>
 

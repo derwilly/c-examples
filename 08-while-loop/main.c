@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 10.11.2014
- *
- * while loop
- */
+/* while loop */
 
 #include <stdio.h>
 

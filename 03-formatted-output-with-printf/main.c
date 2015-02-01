@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 28.01.2015
- *
- * formatted output with printf
- */
+/* formatted output with printf */
 
 #include <stdio.h>
 

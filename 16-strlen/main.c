@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 10.11.2014
- *
- * strlen()
- */
+/* strlen() */
 
 #include <stdio.h>
 #include <string.h>

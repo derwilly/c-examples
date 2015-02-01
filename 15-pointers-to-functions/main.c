@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * Pointers to functions
- */
+/* pointers to functions */
 
 #include <stdio.h>
 

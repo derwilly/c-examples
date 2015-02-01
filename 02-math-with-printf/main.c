@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 27.05.2014
- *
- * calc with printf
- */
+/* calc with printf */
 
 #include <stdio.h>
 

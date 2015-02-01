@@ -1,8 +1,4 @@
-/* Ferdinand Saufler
- * 28.11.2014
- *
- * Simple input output
- */
+/* Simple input output */
 
 #include <stdio.h>
 #include <string.h>
