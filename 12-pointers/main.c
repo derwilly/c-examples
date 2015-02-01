@@ -1,7 +1,7 @@
 /* Ferdinand Saufler
  * 27.05.2014
  *
- * Pointer
+ * Pointers
  */
 
 #include <stdio.h>
