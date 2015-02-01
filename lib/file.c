@@ -1,6 +1,5 @@
-/*
- * file.c
- * Ferdinand Saufler <mail@saufler.de>
+/* file.c
+ * Ferdinand Saufler
  * 06.11.2014
  */
 

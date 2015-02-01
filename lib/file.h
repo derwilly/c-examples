@@ -1,9 +1,8 @@
-/*
- * file.h
- * Ferdinand Saufler <mail@saufler.de>
+/* file.h
+ * Ferdinand Saufler
  * 06.11.2014
  */
- 
+
 int file_exists(const char *path);
 void get_format_size(unsigned long size, char* buf);
 int directory_exists(const char* path);

@@ -1,6 +1,5 @@
-/*
- * str.h
- * Ferdinand Saufler <mail@saufler.de>
+/* str.h
+ * Ferdinand Saufler
  * 21.11.2014
  */
 
