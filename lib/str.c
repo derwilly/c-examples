@@ -18,3 +18,25 @@ int starts_with(char* pattern, char* str)
         return -1;
     }
 }
+
+void to_upper(char *str)
+{
+    while (*str != '\0')
+    {
+        if (*str >= 'a' && *str <= 'z')
+            *str -= 32;
+
+        ++str;
+    }
+}
+
+void to_lower(char *str)
+{
+    while (*str != '\0')
+    {
+        if (*str >= 'A' && *str <= 'Z')
+            *str += 32;
+
+        ++str;
+    }
+}

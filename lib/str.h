@@ -4,3 +4,5 @@
  */
 
 int starts_with(char* pattern, char* str);
+void to_upper(char *str);
+void to_lower(char *str);
