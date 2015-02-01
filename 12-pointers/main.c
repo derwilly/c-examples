@@ -18,5 +18,6 @@ int main(int argc, char* argv[])
 
     printf("firstval is %d\n", firstval);
     printf("secoundval is %d\n", secoundval);
-	return 0;
+
+    return 0;
 }
