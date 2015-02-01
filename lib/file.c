@@ -116,7 +116,7 @@ void get_format_size(unsigned long size, char* buf)
 
 int count_words(const char *sentence)
 {
-    int count = 0; // result
+    int count = 0;
 
     // state:
     int inword = 0;
@@ -136,5 +136,5 @@ int count_words(const char *sentence)
         default: inword = 1;
     } while(*sentence++);
 
-    return counted;
+    return count;
 }
