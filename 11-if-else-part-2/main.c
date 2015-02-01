@@ -1,6 +1,5 @@
 /* Ferdinand Saufler
- * mail@saufler.de
- * 10.11.2014
+ * 01.02.2015
  *
  * if else conditions
  */

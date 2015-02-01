@@ -1,5 +1,4 @@
 /* Ferdinand Saufler
- * mail@saufler.de
  * 28.01.2015
  *
  * simple if else

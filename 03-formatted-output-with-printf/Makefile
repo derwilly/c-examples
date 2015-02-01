@@ -1,5 +1,4 @@
-# Makefile
-# Ferdinand Saufler <mail@saufler.de
+# Ferdinand Saufler
 # 04.11.2014
 
 # vars

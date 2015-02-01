@@ -1,5 +1,4 @@
 /* Ferdinand Saufler
- * mail@saufler.de
  * 27.05.2014
  *
  * sizeof()

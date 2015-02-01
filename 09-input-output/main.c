@@ -1,5 +1,4 @@
-/*
- * Ferdinand Saufler <mail@saufler.de>
+/* Ferdinand Saufler
  * 28.11.2014
  *
  * Simple input output

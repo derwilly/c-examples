@@ -1,5 +1,4 @@
 /* Ferdinand Saufler
- * mail@saufler.de
  * 10.11.2014
  *
  * switch
