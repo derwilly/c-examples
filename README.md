@@ -23,3 +23,4 @@ this contains the following excercises:
 * 09-input-output
 * 10-switch
 * 11-if-else-part-2
+* 12-pointers
