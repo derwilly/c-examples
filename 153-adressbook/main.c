@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "list.h"
+#include <list.h>
 #include "address.h"
 
 int main(int argc, char **argv)
