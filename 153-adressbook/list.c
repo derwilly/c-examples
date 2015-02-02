@@ -58,6 +58,10 @@ void removeNode(List *list, Node *node)
             if(ptr == node)
             {
                 prevNode->next = ptr->next;
+                if(prevNode->next == NULL)
+                {
+                    list->last = prevNode;
+                }
                 list->fnPtr(node->data);
                 list->elements--;
                 free(node);
