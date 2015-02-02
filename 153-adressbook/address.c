@@ -3,7 +3,7 @@
 #include <string.h>
 #include "address.h"
 
-Address *createAdress(char *fname, char *lname, char *email, int age)
+Address *createAddress(char *fname, char *lname, char *email, int age)
 {
     Address *adr = malloc(sizeof(Address));
 
