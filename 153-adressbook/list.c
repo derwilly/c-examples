@@ -11,7 +11,7 @@ List *createList(freeFunction fnPtr)
     return lptr;
 }
 
-void addNote(List *list, void *data)
+void appendNote(List *list, void *data)
 {
     Node *newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
@@ -33,7 +33,36 @@ void addNote(List *list, void *data)
 
 void removeNode(List *list, Node *node)
 {
-    list->fnPtr(node->data);
-    list->elements--;
-    free(node);
+    // if there is no node in the list, break up
+    if(list->first == NULL)
+    {
+        return;
+    }
+
+    // if the node is the first element, just delete it
+    if(node == list->first)
+    {
+        list->first = node->next;
+        list->fnPtr(node->data);
+        list->elements--;
+        free(node);
+    }
+    else
+    {
+        Node *ptr = list->first;
+        Node *prevNode;
+        while(node != NULL)
+        {
+            prevNode = ptr;
+            ptr = ptr->next;
+            if(ptr == node)
+            {
+                prevNode->next = ptr->next;
+                list->fnPtr(node->data);
+                list->elements--;
+                free(node);
+                break;
+            }
+        }
+    }
 }
