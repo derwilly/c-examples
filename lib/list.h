@@ -16,5 +16,5 @@ typedef struct List
 } List;
 
 List *createList();
-void appendNote(List *list, void *data);
+void appendNode(List *list, void *data);
 void removeNode(List *list, Node *node);

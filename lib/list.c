@@ -11,7 +11,7 @@ List *createList(freeFunction fnPtr)
     return lptr;
 }
 
-void appendNote(List *list, void *data)
+void appendNode(List *list, void *data)
 {
     Node *newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;

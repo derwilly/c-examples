@@ -12,9 +12,9 @@ int main(int argc, char **argv)
     List *list = createList(destroyAddress);
 
     /* add three nodes to the list */
-    appendNote(list, createAddress("Harry", "Potter", "harry@hogwarts.com", 20));
-    appendNote(list, createAddress("Hermine", "Granger", "Hermine@hogwarts.com", 19));
-    appendNote(list, createAddress("Ron", "Weasley", "ron@hogwarts.com", 19));
+    appendNode(list, createAddress("Harry", "Potter", "harry@hogwarts.com", 20));
+    appendNode(list, createAddress("Hermine", "Granger", "Hermine@hogwarts.com", 19));
+    appendNode(list, createAddress("Ron", "Weasley", "ron@hogwarts.com", 19));
 
     /* create a note pointer, and let i point on the first element of the list */
     Node *node = list->first;
