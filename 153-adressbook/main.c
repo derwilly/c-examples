@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 
     /* add three nodes to the list */
     appendNode(list, createAddress("Harry", "Potter", "harry@hogwarts.com", 20));
+    appendNode(list, createAddress("Bart", "Simpson", "bart@homersworld.com", 20));
     appendNode(list, createAddress("Hermine", "Granger", "Hermine@hogwarts.com", 19));
     appendNode(list, createAddress("Ron", "Weasley", "ron@hogwarts.com", 19));
 
