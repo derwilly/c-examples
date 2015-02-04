@@ -1,4 +1,4 @@
-/* structs and pointers example */
+/* a simple addressbook with linked lists */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,38 +11,34 @@ int main(int argc, char **argv)
     /* create a list */
     List *list = createList(destroyAddress);
 
-    /* add three nodes to the list */
-    appendNode(list, createAddress("Harry", "Potter", "harry@hogwarts.com", 20));
-    appendNode(list, createAddress("Bart", "Simpson", "bart@homersworld.com", 20));
-    appendNode(list, createAddress("Hermine", "Granger", "Hermine@hogwarts.com", 19));
-    appendNode(list, createAddress("Ron", "Weasley", "ron@hogwarts.com", 19));
-
-    /* create a note pointer, and let i point on the first element of the list */
-    Node *node = list->first;
+    /* add a bunch of nodes to the list */
+    pushNode(list, createAddress("Harry", "Potter", "harry@hogwarts.com", 20));
+    pushNode(list, createAddress("Bart", "Simpson", "bart@homersworld.com", 20));
+    pushNode(list, createAddress("Hermine", "Granger", "Hermine@hogwarts.com", 19));
+    pushNode(list, createAddress("Ron", "Weasley", "ron@hogwarts.com", 19));
+    pushNode(list, createAddress("Micky", "Mouse", "Micky@mouse.com", 19));
 
     /* remove the second node */
-    removeNode(list,node->next);
+    removeNode(list,list->ptr->next);
 
-    /* reset the node-pointer to the begin of the list */
-    node=list->first;
+    /* remove the last node */
+    popNode(list);
+
+    /* count the elements */
+    printf("the list has now %d entries.\n\n", countNodes(list));
+
+    /* reset the list-pointer to the begin of the list */
+    list->ptr = list->first;
 
     /* print all elements of the list */
-    while(node != NULL)
+    while(list->ptr != NULL)
     {
-        printAddress(node->data);
-        printf("\n");
-        node = node->next;
+        printAddress(list->ptr->data);
+        list->ptr = list->ptr->next;
     }
 
-    /* reset the node-pointer to the begin of the list */
-    node = list->first;
-
-    /* destroy all list elements */
-    while(node != NULL)
-    {
-        removeNode(list,node);
-        node = node->next;
-    }
+    /* remove all elements from the list */
+    clearList(list);
 
     return 0;
 }
