@@ -16,6 +16,7 @@ int main(void)
     printf("1024 >> 9 = %d\n", 1024 >> 9);
     printf("1024 >> 10 = %d\n", 1024 >> 10);
     printf("\n");
+    printf("1024 / 8 = %d\n", 1024 >> 3);
 
     return 0;
 }
