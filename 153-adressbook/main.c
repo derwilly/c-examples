@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     /* count the elements */
     printf("the list has now %d entries.\n\n", countNodes(list));
 
-    /* reset the list-pointer to the begin of the list */
+    /* set the list-pointer to the begin of the list */
     list->ptr = list->first;
 
     /* print all elements of the list */
