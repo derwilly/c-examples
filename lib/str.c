@@ -99,3 +99,16 @@ char *remove_blanks(char *str)
 
     return new_str;
 }
+
+int count_char(char *str, const char c)
+{
+    int count = 0;
+    int i = 0;
+    while(str[i] != '\0')
+    {
+        if(str[i] == c)
+            count++;
+        i++;
+    }
+    return count;
+}

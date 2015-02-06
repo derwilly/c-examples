@@ -8,3 +8,4 @@ void to_upper(char *str);
 void to_lower(char *str);
 void print_bits(int value);
 char *remove_blanks(char *str);
+int count_char(char *str, const char c);
