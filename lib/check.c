@@ -35,3 +35,22 @@ int is_leapyear(unsigned int *y)
     else
         return -1;
 }
+
+int is_palindrome(unsigned int *val)
+{
+    int tmp, r = 0;
+    tmp = *val;
+
+    while(tmp != 0)
+    {
+        r = r * 10;
+        r = r + tmp % 10;
+        tmp = tmp / 10;
+    }
+
+    /* check if r is the reverse of *val */
+    if(*val == r)
+        return 0;
+    else
+        return -1;
+}
