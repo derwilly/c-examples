@@ -54,3 +54,15 @@ int is_palindrome(unsigned int *val)
     else
         return -1;
 }
+
+int is_prime(int *val)
+{
+    int i, num = *val;
+
+    for(i=2; i<num; i++)
+    {
+        if(num % i == 0 && i != num)
+            return -1;
+    }
+    return 0;
+}

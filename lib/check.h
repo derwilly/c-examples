@@ -8,3 +8,4 @@ int is_even(int *val);
 int is_vowel(char *c);
 int is_leapyear(unsigned int *y);
 int is_palindrome(unsigned int *val);
+int is_prime(int *val);
