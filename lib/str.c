@@ -3,8 +3,9 @@
  * 21.11.2014
  */
 
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "str.h"
 
 int starts_with(char* pattern, char* str)
@@ -68,4 +69,33 @@ void print_bits(int value)
         }
     }
     printf("\n");
+}
+
+char *remove_blanks(char *str)
+{
+    /* allocate memory for the new "blank-cleared" string */
+    char *new_str = (char*)malloc(sizeof(strlen(str)+1));
+
+    /* count vars */
+    int i = 0;
+    int j = 0;
+
+    /* iterate over the string until we find '\0' */
+    while (str[i] != '\0')
+    {
+        /* if there is no doubled-space, copy the character*/
+        if (!(str[i] == ' ' && str[i+1] == ' ')) {
+            new_str[j] = str[i];
+            j++;
+        }
+        i++;
+    }
+
+    /* remove a tailing ' ' at the end of the string. */
+    if (new_str[j-1] == ' ')
+        new_str[j-1] = '\0';
+    else
+        new_str[j] = '\0';
+
+    return new_str;
 }

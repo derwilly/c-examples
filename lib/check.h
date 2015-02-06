@@ -5,3 +5,5 @@
 
 int is_odd(int *val);
 int is_even(int *val);
+int is_vowel(char *c);
+int is_leapyear(unsigned int *y);

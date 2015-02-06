@@ -7,3 +7,4 @@ int starts_with(char* pattern, char* str);
 void to_upper(char *str);
 void to_lower(char *str);
 void print_bits(int value);
+char *remove_blanks(char *str);
