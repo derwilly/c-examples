@@ -1,4 +1,4 @@
-/* using a bitmask to change the value of a 8-bit register */
+/* using a bitmask to change the value of an 8-bit integer */
 
 #include <stdio.h>
 #include <stdint.h>
