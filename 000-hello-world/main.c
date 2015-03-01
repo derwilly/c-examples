@@ -1,4 +1,6 @@
-/* Hallo World */
+/* Ferdinand Saufler <mail@saufler.de>
+ * 01.03.2015
+ * Hallo World */
 
 #include <stdio.h>
 

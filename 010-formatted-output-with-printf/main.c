@@ -1,4 +1,6 @@
-/* formatted output with printf */
+/* Ferdinand Saufler <mail@saufler.de>
+ * 01.03.2015
+ * formatted output with printf */
 
 #include <stdio.h>
 
