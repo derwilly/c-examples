@@ -6,3 +6,4 @@
 *.db-journal
 *.csync_journal
 *.DS_Store
+*.swp
