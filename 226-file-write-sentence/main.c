@@ -1,6 +1,6 @@
 /* Ferdinand Saufler <mail@saufler.de>
  * 01.03.2015
- * this file reads one line from stdin and prints it to a file */
+ * this program reads one line from stdin and prints it to a file */
 
 #include <stdio.h>
 #include <stdlib.h>
