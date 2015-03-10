@@ -1,3 +1,7 @@
+/* Ferdinand Saufler <mail@saufler.de>
+ * 10.03.2015 
+ * a simple implementation of a linked list */
+
 typedef void (*freeFunction)(void *);
 
 typedef struct Node
@@ -13,7 +17,7 @@ typedef struct List
     Node *last;
     Node *ptr;
     int elements;
-    freeFunction fnPtr;
+    freeFunction DeleteFnPtr;
 } List;
 
 List *createList();

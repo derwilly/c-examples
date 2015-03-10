@@ -1,14 +1,18 @@
+/* Ferdinand Saufler <mail@saufler.de>
+ * 10.03.2015 
+ * a simple implementation of a linked list */
+
 #include <stdlib.h>
 #include "list.h"
 
-List *createList(freeFunction fnPtr)
+List *createList(freeFunction DeleteFnPtr)
 {
     List *lptr = (List*)malloc(sizeof(List));
     lptr->first = NULL;
     lptr->last = NULL;
     lptr->ptr = NULL;
     lptr->elements = 0;
-    lptr->fnPtr = fnPtr;
+    lptr->DeleteFnPtr = DeleteFnPtr;
     return lptr;
 }
 
@@ -16,24 +20,27 @@ void clearList(List *list)
 {
     Node *node;
 
-    // if there is no node in the list, break up
+    /*if there is no node in the list, break up */
     if(list->elements < 1)
     {
         return;
     }
     else
     {
+        /* set the list-pointer to the first element */
         list->ptr = list->first;
+
+        /* iterate over the list and release all elements */
         while(list->ptr != NULL)
         {
             node = list->ptr;
-            list->fnPtr(node->data);
+            list->DeleteFnPtr(node->data);
             list->elements--;
             free(node);
             list->ptr = list->ptr->next;
         }
 
-        // reset all list properties
+        /* reset all list properties */
         list->first = NULL;
         list->last = NULL;
         list->ptr = NULL;
@@ -42,23 +49,23 @@ void clearList(List *list)
 
 void removeNode(List *list, Node *node)
 {
-    // if there is no node in the list, break up
+    /* if there is no node in the list, break up */
     if(list->elements < 1)
     {
         return;
     }
     else if(list->elements == 1)
     {
-        // free and detroy the first element
-        list->fnPtr(list->first->data);
+        /* free and detroy the first element */
+        list->DeleteFnPtr(list->first->data);
 
-        // update list values
+        /* update list values */
         list->first = NULL;
         list->last = NULL;
         list->ptr = NULL;
         list->elements--;
 
-        // free the node
+        /* free the node */
         free(list->first);
     }
     else
@@ -74,19 +81,19 @@ void removeNode(List *list, Node *node)
             if(ptr == node)
             {
 
-                // now set the next property of the node before the deletion-node
-                // to the node after the deletion node
+                /* now set the next property of the node before the deletion-node
+                 * to the node after the deletion node */
                 prevNode->next = ptr->next;
 
-                // if the node before the deletion-node is the last-node in the
-                // list, update the list->last proberty
+                /*  if the node before the deletion-node is the last-node in the
+                 *list, update the list->last proberty */
                 if(prevNode->next == NULL)
                 {
                     list->last = prevNode;
                 }
 
-                // release the data and clean up the memory
-                list->fnPtr(node->data);
+                /* release the data and clean up the memory */
+                list->DeleteFnPtr(node->data);
                 list->elements--;
                 free(node);
                 break;
@@ -118,7 +125,7 @@ void pushNode(List *list, void *data)
 
 void popNode(List *list)
 {
-    // if there is no node in the list, break up
+    /* if there is no node in the list, break up */
     if(list->elements < 1)
     {
         return;
@@ -126,7 +133,7 @@ void popNode(List *list)
     else if(list->elements == 1)
     {
         // free and detroy the first element
-        list->fnPtr(list->first->data);
+        list->DeleteFnPtr(list->first->data);
 
         // update list values
         list->first = NULL;
@@ -159,7 +166,7 @@ void popNode(List *list)
         }
 
         // free and detroy the last element
-        list->fnPtr(list->last->data);
+        list->DeleteFnPtr(list->last->data);
         list->elements--;
         free(list->last);
 
