@@ -49,9 +49,7 @@ int main(void)
     refresh();
 
     /* idle until the "F2"-Key is pressed */
-    while(getch() != KEY_F(2))
-    {
-    }
+    while(getch() != KEY_F(2)){;}
 
     return(0);
 }
