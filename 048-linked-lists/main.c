@@ -55,6 +55,7 @@ int main(int argc, char **argv)
     list = first;
 
     printList(list);
+    printf("\n");
     destroyList(list);
 
     return 0;
