@@ -1,4 +1,6 @@
-/* vars */
+/* Ferdinand Saufler <mail@saufler.de>
+ * 14.03.2015
+ * vars */
 
 #include <stdio.h>
 
@@ -7,9 +9,9 @@ int main(int argc, char *argv[])
     int legs = 4;
     static float pi = 3.1416f;
     double moondis = 384400123.459;
-    char astarts = 'A';
-    char fname[] = "Ferdinand";
-    char lname[] = "Saufler";
+    char a_starts = 'A';
+    char fname[] = "Flash";
+    char lname[] = "Gordon";
     char *p = fname;
 
     printf("My cat has %d legs.\n", legs);

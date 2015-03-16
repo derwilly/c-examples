@@ -1,4 +1,6 @@
-/* ternary operator */
+/* Ferdinand Saufler <mail@saufler.de>
+ * 14.03.2015
+ * ternary operator */
 
 #include <stdio.h>
 

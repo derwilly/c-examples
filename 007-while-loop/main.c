@@ -1,4 +1,6 @@
-/* while loop */
+/* Ferdinand Saufler <mail@saufler.de>
+ * 14.03.2015
+ * while loop */
 
 #include <stdio.h>
 

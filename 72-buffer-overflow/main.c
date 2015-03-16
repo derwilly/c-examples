@@ -1,7 +1,7 @@
 /* Ferdinand Saufler <mail@saufler.de>
  * 16.03.2015
  *
- * this programs forces a buffer overflow
+ * this program forces a buffer overflow
  * - the compiler should give you a warning:
  *   "... will always overflow destination buffer"
  * - still run the example and see what happens
@@ -34,7 +34,7 @@ int main(int argc, char** argv)
 
     /* kapow */
     strcpy(buf, str);
-    
+
     printf("%s",buf);
 
     return 0;

@@ -1,12 +1,14 @@
-/* switch */
+/* Ferdinand Saufler <mail@saufler.de>
+ * 14.03.2015
+ * switch */
 
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
     if(argc != 2)
     {
-        printf("error, please insert an string-argument.\n");
+        printf("usage %s [string]\n",argv[0]);
         return 1;
     }
 
