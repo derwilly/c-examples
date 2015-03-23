@@ -14,8 +14,8 @@
 
 int main(int argc, char** argv)
 {
-    /* "status", stores the return value of getaddrinfo() */
-    int status;
+    /* err, stores the return value of getaddrinfo() */
+    int err;
 
     /* store the ip-addresses in a char array, the lenth of an
      * IPv6 address on my machine is defined in
@@ -38,10 +38,15 @@ int main(int argc, char** argv)
     struct addrinfo hints, *result, *ptr;
 
     /* check the commandline argument */
-    if(argc != 2 || strlen(argv[1]) < 3)
+    if(argc != 2)
     {
         fprintf(stderr,"usage: %s host\n",argv[0]);
         return 1;
+    }
+    else if (strlen(argv[1]) < 3)
+    {
+        fputs("length of the hostname must be at least 3 characters.\n",stderr);
+        return 2;
     }
 
     /* make sure hints is empty */
@@ -60,10 +65,10 @@ int main(int argc, char** argv)
      * the ip-address. getaddrinfo() creates a linked list of,
      * results, in that case "result" points to the first entry
      * in the list. */
-    if((status = getaddrinfo(argv[1], 0, &hints, &result)) != 0)
+    if((err = getaddrinfo(argv[1], 0, &hints, &result)) != 0)
     {
-        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(status));
-        return 2;
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(err));
+        return 3;
     }
 
     printf("ip-adresses for host %s:\n", argv[1]);
@@ -78,7 +83,7 @@ int main(int argc, char** argv)
 
         /* if its a IPv4 address */
         if (ptr->ai_family == AF_INET)
-        { // IPv4
+        {
             struct sockaddr_in *ipv4 = (struct sockaddr_in *)ptr->ai_addr;
             address = &(ipv4->sin_addr);
             version = "IPv4";
