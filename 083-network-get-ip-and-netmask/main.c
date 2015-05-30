@@ -1,5 +1,5 @@
 /* Ferdinand Saufler <mail@saufler.de>
- * 22.03.2015
+ * 30.05.2015
  *
  * get ip-address and netmask of an interface
  */
