@@ -40,7 +40,7 @@ After that check dmesg, the Driver should print a message like this:
 [ 2145.073329] amazing-driver mod_exit called.
 ```
 
-To unload the Driver simply use makefile again:
+To unload the Driver simply use the makefile again:
 ``` bash
 make rmmod
 
