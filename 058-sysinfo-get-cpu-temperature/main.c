@@ -26,5 +26,5 @@ int main()
     /* close the file descriptor */
     fclose(t_file);
 
-	return 0;
+    return 0;
 }

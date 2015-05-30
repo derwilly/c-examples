@@ -1,7 +1,15 @@
 # directories
 **/bin/*
+**/.tmp_versions
 
 # files
+*.mod.c
+*.ko.cmd
+*.o.cmd
+*.o
+*.ko
+*.symvers
+*.order
 *.db-journal
 *.csync_journal
 *.DS_Store
