@@ -29,7 +29,7 @@ makefile-target for you:
 make insmod
 
 # or use
-sudo insmod amazing-diver.ko
+sudo insmod amazing-driver.ko
 ```
 
 After that check dmesg, the Driver should print a message like this:
