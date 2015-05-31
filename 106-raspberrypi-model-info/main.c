@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <file.h>
 
 typedef struct raspberry {
     char ModelName[254];
@@ -15,7 +14,6 @@ typedef struct raspberry {
 
 int main()
 {
-    //char *filename = "/proc/cpuinfo";
     char *filename = "/proc/cpuinfo";
     FILE *f;
     char line[254];
