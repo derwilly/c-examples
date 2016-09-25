@@ -74,7 +74,10 @@ void print_bits(int value)
 char *remove_blanks(char *str)
 {
     /* allocate memory for the new "blank-cleared" string */
-    char *new_str = (char*)malloc(sizeof(strlen(str)+1));
+    char *new_str = (char*)malloc((strlen(str)+1)*sizeof(char));
+
+    if(new_str == NULL)
+        return NULL;
 
     /* count vars */
     int i = 0;
@@ -100,7 +103,17 @@ char *remove_blanks(char *str)
     return new_str;
 }
 
-int count_char(char *str, const char c)
+void remove_newline(char *str)
+{
+    size_t ln = strlen(str) - 1;
+    if (str[ln] == '\n')
+    {
+        str[ln] = '\0';
+    }
+}
+
+/* returns how many times a character occurs in a string */
+unsigned count_char(char *str, const char c)
 {
     int count = 0;
     int i = 0;
@@ -111,4 +124,44 @@ int count_char(char *str, const char c)
         i++;
     }
     return count;
+}
+
+/* returns the number of words in a string */
+unsigned long count_words(const char *sentence)
+{
+    int count = 0;
+
+    // state:
+    int inword = 0;
+
+    if(sentence == NULL)
+        return 0;
+
+    do switch(*sentence) {
+        case '\0':
+        case ' ':
+        case '\t':
+        case '\n':
+        case '\r':
+        {
+            if (inword) {
+                inword = 0; count++;
+            }
+            break;
+        }
+        default: inword = 1;
+    } while(*sentence++);
+
+    return count;
+}
+
+/* returns the number of characters in a string */
+unsigned long strlength(const char *str)
+{
+    unsigned long len = 0;
+    while(*(str++))
+    {
+        len++;
+    }
+    return len;
 }

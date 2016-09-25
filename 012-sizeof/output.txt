@@ -1,8 +1,0 @@
-the size of an int is 4 bytes
-the size of iarray is 16 bytes
-the number of ints in iarray is 4
-the size of a char is 1 bytes
-the size of fname is 6 bytes
-the number of chars in fname is 6
-the size of fname_array is 10 bytes
-the number of chars in fname_array is 10

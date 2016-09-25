@@ -1,6 +1,6 @@
 /* Ferdinand Saufler <mail@saufler.de>
- * 10.03.2015 
- * a simple implementation of a linked list */
+ * 10.03.2015
+ * a implementation of a linked list */
 
 #include <stdlib.h>
 #include "list.h"

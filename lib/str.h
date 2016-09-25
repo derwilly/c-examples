@@ -8,4 +8,7 @@ void to_upper(char *str);
 void to_lower(char *str);
 void print_bits(int value);
 char *remove_blanks(char *str);
-int count_char(char *str, const char c);
+void remove_newline(char *str);
+unsigned count_char(char *str, const char c);
+unsigned long count_words(const char *sentence);
+unsigned long strlength(const char *str);

@@ -1,12 +1,5 @@
-TARGET   = main
-CC       =gcc
-_OBJ     =main.o
-_OBJ	+=file.o
-OBJ      =$(patsubst %,$(O_DIR)/%,$(_OBJ))
-OBJ_BIND = -lcurses
-LIBPATH  =../lib
-vpath %.c $(LIBPATH)
-CFLAGS   =-c -Wall -O -g -I$(LIBPATH)
-O_DIR    =bin
+TARGET   =main
+_OBJ     =$(TARGET).o file.o
+OBJ_BIND =lcurses
 
-include $(LIBPATH)/Makefile
+include ../Makefile.common

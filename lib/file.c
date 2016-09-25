@@ -13,17 +13,18 @@
  * int file_exists()
  * checks if a given file exists
  * return 0 if the file exists
- * else it returns -1
+ * if the file does not exist it returns -1
  */
 int file_exists(const char *fpath)
 {
     if(access(fpath, F_OK) != -1)
     {
-        // file exists
+        /* file exists */
         return 0;
     }
     else
     {
+        /* file does not exist */
         return -1;
     }
 }
@@ -51,6 +52,16 @@ int directory_exists(const char* path)
     return d_exists;
 }
 
+/* returns the file size in bytes */
+unsigned long get_filesize(const char *path)
+{
+    FILE *fp;
+    fp = fopen(path,"r");
+    fseek(fp, 0L, SEEK_END);
+    unsigned long sz = ftell(fp);
+    return sz;
+}
+
 /*
  * returnes a formatted string of the filesize
  * for example 1024B => 1KB
@@ -67,7 +78,7 @@ void get_format_size(unsigned long size, char* buf)
     {
         if(size <= 1024)
         {
-            sprintf(buf,"%.2lf",size_d);
+            sprintf(buf,"%.0lf",size_d);
             strcat(buf, "B");
         }
         else
@@ -75,7 +86,7 @@ void get_format_size(unsigned long size, char* buf)
             size_d /= 1024;
             if(size_d <= 1024)
             {
-                sprintf(buf,"%.2lf",size_d);
+                sprintf(buf,"%.0lf",size_d);
                 strcat(buf, "KB");
             }
             else
@@ -104,7 +115,7 @@ void get_format_size(unsigned long size, char* buf)
                         }
                         else
                         {
-                            sprintf(buf,"%.2lf",size_d);
+                            sprintf(buf,"%.0lf",size_d);
                             strcat(buf, ">TB");
                         }
                     }
@@ -112,29 +123,4 @@ void get_format_size(unsigned long size, char* buf)
             }
         }
     }
-}
-
-int count_words(const char *sentence)
-{
-    int count = 0;
-
-    // state:
-    int inword = 0;
-
-    do switch(*sentence) {
-        case '\0':
-        case ' ':
-        case '\t':
-        case '\n':
-        case '\r':
-        {
-            if (inword) {
-                inword = 0; count++;
-            }
-            break;
-        }
-        default: inword = 1;
-    } while(*sentence++);
-
-    return count;
 }

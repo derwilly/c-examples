@@ -1,12 +1,5 @@
-TARGET   = main
-CC       =gcc
-_OBJ     =main.o
-_OBJ    +=ctime.o
-OBJ      =$(patsubst %,$(O_DIR)/%,$(_OBJ))
-OBJ_BIND = -lpthread
-LIBPATH  =../lib
-vpath %.c $(LIBPATH)
-CFLAGS   =-c -Wall -O -g -I$(LIBPATH)
-O_DIR    =bin
+TARGET   =main
+_OBJ     =$(TARGET).o ctime.o
+OBJ_BIND =
 
-include $(LIBPATH)/Makefile
+include ../Makefile.common

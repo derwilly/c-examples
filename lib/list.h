@@ -1,5 +1,5 @@
 /* Ferdinand Saufler <mail@saufler.de>
- * 10.03.2015 
+ * 10.03.2015
  * a simple implementation of a linked list */
 
 typedef void (*freeFunction)(void *);
@@ -8,7 +8,6 @@ typedef struct Node
 {
     void *data;
     struct Node *next;
-    freeFunction freeFn;
 } Node;
 
 typedef struct List

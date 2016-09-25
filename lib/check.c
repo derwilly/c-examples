@@ -3,6 +3,8 @@
  * 06.02.2014
  */
 
+#include <ctype.h>
+
 int is_odd(int *val)
 {
     if(*val % 2 == 0)
@@ -65,4 +67,16 @@ int is_prime(int *val)
             return -1;
     }
     return 0;
+}
+
+int is_numeric(char *str)
+{
+    while(*str)
+    {
+        if(!isdigit(*str))
+            return 0;
+        str++;
+    }
+
+    return 1;
 }

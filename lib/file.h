@@ -4,6 +4,6 @@
  */
 
 int file_exists(const char *path);
-void get_format_size(unsigned long size, char* buf);
 int directory_exists(const char* path);
-int count_words(const char *sentence);
+unsigned long get_filesize(const char *path);
+void get_format_size(unsigned long size, char* buf);
