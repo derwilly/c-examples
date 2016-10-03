@@ -1,6 +1,6 @@
 /* Ferdinand Saufler <mail@saufler.de>
  * 22.03.2015
- *
+ * last updated on 03.10.2016
  * a simple chatserver
  */
 
@@ -15,7 +15,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 
-#define VERSION "0.0.1"
+#define VERSION "0.0.2"
 
 void *get_addr(struct sockaddr *sa)
 {
@@ -207,7 +207,7 @@ int main(int argc, char** argv)
                     {
                         /* we got some data */
                         /* print the data to the server console */
-                        printf("%s", buf);
+                        printf("[client::%d] %s", i, buf);
 
                         for(j = 0; j <= max_fd; j++)
                         {
