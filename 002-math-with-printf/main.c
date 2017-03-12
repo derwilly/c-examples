@@ -1,4 +1,4 @@
-/* calc with printf */
+/* math with printf */
 
 #include <stdio.h>
 
