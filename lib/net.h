@@ -15,6 +15,12 @@ struct InterfaceInfo {
     char *Ipv6Netmask;
 };
 
+typedef struct net_client {
+    char *remote_ip;
+    char *remote_port,
+    int socket
+} net_client;
+
 struct InterfaceInfo *GetInterfaceInfo();
 void FreeInterfaceInfo(struct InterfaceInfo *ifi);
 
