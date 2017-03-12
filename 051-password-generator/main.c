@@ -1,6 +1,6 @@
 /*
  * Password Generator V1.4.1
- * main.cpp
+ * main.c
  * Ferdinand Saufler <mail@saufler.de>
  * 12.03.2013, last updated 12.03.2017
  *
