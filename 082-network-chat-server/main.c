@@ -17,6 +17,10 @@
 
 #define VERSION "0.0.2"
 
+typedef struct net_client {
+
+} net_client;
+
 void *get_addr(struct sockaddr *sa)
 {
     if (sa->sa_family == AF_INET) {
@@ -27,7 +31,7 @@ void *get_addr(struct sockaddr *sa)
 
 int main(int argc, char** argv)
 {
-    char port[5] = {};                  // port
+    char port[6] = {};                  // port
     fd_set fd_master;                   // master file descriptor list
     fd_set fd_read;                     // temporary file descriptor list for select()
     int max_fd;                         // number of maximum file descriptors
@@ -141,7 +145,7 @@ int main(int argc, char** argv)
     /* add the listener to the master set */
     FD_SET(listener, &fd_master);
 
-    /* monitor the max file descriptor */
+    /* monitor the max file descriptor, for now its the listener */
     max_fd = listener;
 
     /* main loop */
@@ -149,6 +153,7 @@ int main(int argc, char** argv)
     {
         /* copy the master set to the read set */
         fd_read = fd_master;
+
         if (select(max_fd+1, &fd_read, NULL, NULL, NULL) == -1)
         {
             printf("select error: %s\n", strerror(errno));
@@ -172,6 +177,7 @@ int main(int argc, char** argv)
                     {
                         /* add the new descriptor to the master set */
                         FD_SET(new_fd, &fd_master);
+
                         /* if the new descriptor is greater than max_fd,
                          * update max_fd */
                         if (new_fd > max_fd) {
@@ -184,7 +190,9 @@ int main(int argc, char** argv)
                             remote_ip, INET6_ADDRSTRLEN),
                             new_fd);
                     }
-                } else {
+                }
+                else
+                {
                     /* handle data from the client */
                     if ((bytes_recved = recv(i, buf, sizeof buf, 0)) <= 0) {
                         /* an error occured, or client closed connection */
