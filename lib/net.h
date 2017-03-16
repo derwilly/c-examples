@@ -17,8 +17,8 @@ struct InterfaceInfo {
 
 typedef struct net_client {
     char *remote_ip;
-    char *remote_port,
-    int socket
+    char *remote_port;
+    int socket;
 } net_client;
 
 struct InterfaceInfo *GetInterfaceInfo();
